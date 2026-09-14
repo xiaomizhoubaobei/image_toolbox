@@ -62,7 +62,7 @@ const ImageCropper = ({ src, setSrc, payload, setPayload }: PropsData) => {
 
             }
             setTimeout(() => {
-                cropperRef.current.zoomImage(0.1); // zoom-in 
+                cropperRef.current.zoomImage(0.1); // zoom-in
                 setPayload((preData: any) => { return { ...preData, canvas: cropperRef.current.getCanvas() } });
             }, 30)
         }
