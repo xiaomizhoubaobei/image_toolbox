@@ -6,14 +6,14 @@
 
 <p style="text-align: center;"><a href="README.md">中文</a> | <a href="README_en.md">English</a> | <a href="README_ja.md">日本語</a></p>
 
-![pic-tool](docs/图片工具箱jp.png) 
+![pic-tool](docs/图片工具箱jp.png)
 
 これは[302.AI](https://302.ai/ja/)の[AI画像ツールボックス](https://302.ai/product/detail/29)オープンソース版です。302.AIに直接ログインし、コード不要でオンライン版を使用するか、自分のニーズに合わせて変更して自分でデプロイすることができます。
 
 
 ## インターフェースプレビュー
 画像をアップロードするか説明を入力することで、モデルを選択して画像を生成した後、画像処理を行うことができます。複数の画像処理機能が選択可能です。
-![pic-tool](docs/ja/pic-tool.png)     
+![pic-tool](docs/ja/pic-tool.png)
 
 背景除去機能を例にとると、アップロードした画像に基づいて、AI が自動的に背景を識別して除去します。
 ![pic-tool](docs/ja/图片工具箱日1.png)
