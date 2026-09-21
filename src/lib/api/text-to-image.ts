@@ -41,7 +41,7 @@ function aiTranslateWithGitee(str: string): Promise<string> {
   return new Promise<any>(async (resolve, reject) => {
     try {
       const token = getGiteeToken()
-      
+
       if (!token) {
         reject(new Error('Gitee AI token is required'))
         return
@@ -193,12 +193,12 @@ export async function textToImage(action: TextToImageAction): Promise<TextToImag
         }
         res = await qrcodeCreateImage(prompt, link)
       }
-      
+
       // gitee ai models
       if (action.model.value.startsWith('gitee-')) {
         const giteeModel = action.model.value.replace('gitee-', '')
         let prompt = action.prompt
-        
+
         // 使用 Gitee AI 的 Seed-X-PPO-7B 模型进行翻译
         if (SystemManager.containsChinese(prompt)) {
           try {
@@ -209,9 +209,9 @@ export async function textToImage(action: TextToImageAction): Promise<TextToImag
             console.warn('Using original prompt due to translation failure')
           }
         }
-        
+
         const size = action.ratio.size || '1024x1024'
-        
+
         try {
           const imageUrl = await generateImageWithGiteeAI({
             prompt,
@@ -220,7 +220,7 @@ export async function textToImage(action: TextToImageAction): Promise<TextToImag
             num_inference_steps: 25,
             guidance_scale: 7.5,
           }, undefined, getGiteeToken())
-          
+
           result.imageSrc = imageUrl
           resolve(result)
           return
