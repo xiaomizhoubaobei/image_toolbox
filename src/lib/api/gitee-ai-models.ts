@@ -83,7 +83,7 @@ export class GiteeAIModelsManager {
    */
   public async fetchModels(forceRefresh: boolean = false): Promise<GiteeAIModel[]> {
     const now = Date.now()
-    
+
     // 如果缓存未过期且不强制刷新，返回缓存
     if (!forceRefresh && this.models.length > 0 && (now - this.lastFetchTime) < this.cacheDuration) {
       return this.models
@@ -141,7 +141,7 @@ export class GiteeAIModelsManager {
     const ownedBy = model.owned_by?.toLowerCase() || ''
 
     // 图片生成
-    if (id.includes('flux') || id.includes('kolors') || id.includes('sd') || 
+    if (id.includes('flux') || id.includes('kolors') || id.includes('sd') ||
         id.includes('stable-diffusion') || id.includes('glm-image') || id.includes('qwen-image') ||
         id.includes('z-image') || id.includes('cogview') || id.includes('cogvideox') ||
         ownedBy.includes('black-forest-labs') || ownedBy.includes('tongyi-mai')) {
@@ -241,7 +241,7 @@ export class GiteeAIModelsManager {
    */
   public getModelTypeStats(models: GiteeAIModel[]): Record<ModelType, number> {
     const stats: Record<ModelType, number> = {} as any
-    
+
     models.forEach(model => {
       const type = this.identifyModelType(model)
       stats[type] = (stats[type] || 0) + 1
@@ -255,7 +255,7 @@ export class GiteeAIModelsManager {
    */
   public groupModelsByOwner(models: GiteeAIModel[]): Record<string, GiteeAIModel[]> {
     const grouped: Record<string, GiteeAIModel[]> = {}
-    
+
     models.forEach(model => {
       const owner = model.owned_by || 'Unknown'
       if (!grouped[owner]) {
@@ -272,7 +272,7 @@ export class GiteeAIModelsManager {
    */
   public searchModels(models: GiteeAIModel[], query: string): GiteeAIModel[] {
     const lowerQuery = query.toLowerCase()
-    return models.filter(model => 
+    return models.filter(model =>
       model.id.toLowerCase().includes(lowerQuery) ||
       (model.owned_by && model.owned_by.toLowerCase().includes(lowerQuery))
     )
@@ -292,7 +292,7 @@ export class GiteeAIModelsManager {
    */
   public getAvailableModelTypes(models: GiteeAIModel[]): ModelType[] {
     const types = new Set<ModelType>()
-    
+
     models.forEach(model => {
       types.add(this.identifyModelType(model))
     })
