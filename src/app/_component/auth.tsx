@@ -64,7 +64,7 @@ const PageAuth = ({ open, setOpen }: PageAuthProps) => {
     if (window) {
       const apiKeyFromEnv = process.env.NEXT_PUBLIC_API_KEY;
       const giteeApiKeyFromEnv = process.env.NEXT_PUBLIC_GITEE_AI_API_KEY;
-      
+
       if (apiKeyFromEnv && !token) {
         setToken(apiKeyFromEnv);
       } else if (giteeApiKeyFromEnv && !giteeToken) {
@@ -82,7 +82,7 @@ const PageAuth = ({ open, setOpen }: PageAuthProps) => {
    */
   const handleApiKeySubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
-    
+
     if (inputApiKey) {
       if (selectedProvider === '302ai') {
         setToken(inputApiKey);
@@ -99,10 +99,10 @@ const PageAuth = ({ open, setOpen }: PageAuthProps) => {
         <DialogContent>
           <DialogTitle className=''>{Locale.Auth.Title}</DialogTitle>
           <DialogDescription className="text-sm text-slate-500 mb-4">{Locale.Auth.NeedCode}</DialogDescription>
-          
-          <ToggleGroup 
-            type="single" 
-            value={selectedProvider} 
+
+          <ToggleGroup
+            type="single"
+            value={selectedProvider}
             onValueChange={(value) => {
               const newProvider = value as '302ai' | 'giteeai';
               setSelectedProvider(newProvider);
@@ -123,15 +123,15 @@ const PageAuth = ({ open, setOpen }: PageAuthProps) => {
               <label className='text-sm text-slate-500 block mb-2' htmlFor="apiKey">
                 {selectedProvider === '302ai' ? Locale.Auth.InputCode : Locale.Auth.GiteeInputCode}
               </label>
-              <Input 
-                id="apiKey" 
-                name="apiKey" 
+              <Input
+                id="apiKey"
+                name="apiKey"
                 placeholder={Locale.Auth.PlaceHolder}
                 value={inputApiKey}
                 onChange={(e) => setInputApiKey(e.target.value)}
               />
             </div>
-            
+
             <DialogFooter>
               <Button type="submit">{Locale.Auth.Submit}</Button>
             </DialogFooter>
