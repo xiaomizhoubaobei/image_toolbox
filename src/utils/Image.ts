@@ -174,7 +174,7 @@ export default class ImageManager {
     }
   }
 
-  // 转换图片格式 
+  // 转换图片格式
   static pngToJpg = async (url: string) => {
     return new Promise((resolve, reject) => {
       const image = new Image();
