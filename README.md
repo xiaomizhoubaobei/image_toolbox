@@ -6,13 +6,13 @@
 
 <p style="text-align: center;"><a href="README.md">中文</a> | <a href="README_en.md">English</a> | <a href="README_ja.md">日本語</a></p>
 
-![pic-tool](docs/图片工具箱.png)  
+![pic-tool](docs/图片工具箱.png)
 
 这是来自[302.AI](https://302.ai)的[AI图片工具箱](https://302.ai/product/detail/29)开源版本。你可以直接登录302.AI，零代码零基础使用在线版本，或根据自己的需求修改并自行部署。
 
 ## 界面预览
 可通过上传图片或输入描述，选择模型生成图片后进行图片处理，多种图片处理功能可供选择。
-![pic-tool](docs/zh/pic-tool.png)      
+![pic-tool](docs/zh/pic-tool.png)
 
 以去除背景功能为例，根据上传的图片，AI自动识别背景并去除。
 ![pic-tool](docs/zh/图片工具箱1.png)
