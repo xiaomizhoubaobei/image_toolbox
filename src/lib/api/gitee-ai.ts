@@ -70,7 +70,7 @@ async function handleFetchError(res: Response): Promise<never> {
  * @param baseUrl - Gitee AI API 基础 URL（可选，默认为 https://ai.gitee.com）
  * @param token - Gitee AI API Token（可选，从环境变量获取）
  * @returns base64 编码的图片 data URL
- * 
+ *
  * @example
  * ```typescript
  * const imageUrl = await generateImageWithGiteeAI({
