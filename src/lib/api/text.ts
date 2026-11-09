@@ -63,12 +63,12 @@ async function handleFetchError(res: Response): Promise<never> {
  */
 export const aiTranslate = (str: string) => {
   const provider = useStore.getState().provider;
-  
+
   // 如果选择的是 Gitee AI，使用 Gitee AI 的翻译服务
   if (provider === 'giteeai') {
     return aiTranslateWithGitee(str);
   }
-  
+
   // 否则使用 302AI 的翻译服务
   const fetUrl = `${process.env.NEXT_PUBLIC_FETCH_API_URL}/v1/chat/completions`
   return new Promise<any>(async (resolve, reject) => {
@@ -123,7 +123,7 @@ export const aiTranslateWithGitee = (str: string) => {
   return new Promise<any>(async (resolve, reject) => {
     try {
       const token = getGiteeToken()
-      
+
       if (!token) {
         reject(new Error('Gitee AI token is required'))
         return
