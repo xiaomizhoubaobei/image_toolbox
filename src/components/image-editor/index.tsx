@@ -260,4 +260,3 @@ export const ImageEditor: React.FC<PropsData> = ({ src, setSrc, setPayload }) =>
     </div>
   );
 };
-
